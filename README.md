@@ -1,2 +1,129 @@
-# The-tesla-calculator-
-This is a calculator to calculate electrical quantities of a circuit
+# This is a calculator to calculate electrical quantities of a circuit
+
+
+def calculate_circuit_current(voltage, resistance):
+    """
+    Calculates the current through a circuit given its voltage and resistance.
+
+    Args:
+        voltage (float): The voltage across the circuit.
+        resistance (float): The resistance of the circuit.
+
+    Returns:
+        float: The calculated current.
+    """
+    return voltage / resistance
+
+def calculate_circuit_power(voltage, resistance):
+    """
+    Calculates the power through a circuit given its voltage and resistance.
+
+    Args:
+        voltage (float): The voltage across the circuit.
+        resistance (float): The resistance of the circuit.
+
+    Returns:
+        float: The calculated power.
+    """
+    return voltage * voltage / resistance
+
+def calculate_circuit_resistance(current, voltage):
+    """
+    Calculates the resistance of a circuit given its current and voltage.
+
+    Args:
+        current (float): The current flowing through the circuit.
+        voltage (float): The voltage across the circuit.
+
+    Returns:
+        float: The calculated resistance.
+    """
+    return voltage / current
+
+def calculate_circuit_voltage(current, resistance):
+    """
+    Calculates the voltage across a circuit given its current and resistance.
+
+    Args:
+        current (float): The current flowing through the circuit.
+        resistance (float): The resistance of the circuit.
+
+    Returns:
+        float: The calculated voltage.
+    """
+    return current * resistance
+
+def calculate_circuit_power_factor(voltage, current):
+    """
+    Calculates the power factor of a circuit given its voltage and current.
+
+    Args:
+        voltage (float): The voltage across the circuit.
+        current (float): The current flowing through the circuit.
+
+    Returns:
+        float: The calculated power factor.
+    """
+    return voltage / current
+    
+def calculate_circuit_impedance(voltage, current):
+    """
+    Calculates the impedance of a circuit given its voltage and current.
+
+    Args:
+        voltage (float): The voltage across the circuit.
+        current (float): The current flowing through the circuit.
+
+    Returns:
+        float: The calculated impedance.
+    """
+    return voltage / current
+
+print("Welcome to the Circuit Calculator! Select what do you want?")
+print("1. Current")
+print("2. Power")
+print("3. Resistance")
+print("4. Voltage")
+print("5. Power Factor")
+print("6. Impedance")
+print("7. Exit")
+choice = int(input("Enter your choice: "))
+if choice == 1:
+    voltage = float(input("Enter whith the circuit voltage: "))
+    resistance = float(input("Enter whith the circuit resistance: "))
+    current = calculate_circuit_current(voltage, resistance)
+    print("The current is:", current, 'A')
+
+elif choice == 2:
+    voltage = float(input("Enter whith the circuit voltage: "))
+    resistance = float(input("Enter whith the circuit resistance: "))
+    power = calculate_circuit_power(voltage, resistance)
+    print("The power is:", power, 'W')
+
+elif choice == 3:
+    current = float(input("Enter whith the circuit current: "))
+    voltage = float(input("Enter whith the circuit voltage: "))
+    resistance = calculate_circuit_resistance(current, voltage)
+    print("The resistance is:", resistance, 'R')
+
+elif choice == 4:
+    current = float(input("Enter whith the circuit current: "))
+    resistance = float(input("Enter whith the circuit resistance: "))
+    voltage = calculate_circuit_voltage(current, resistance)
+    print("The voltage is:", voltage)
+
+elif choice == 5:
+    voltage = float(input("Enter whith the circuit voltage: "))
+    current = float(input("Enter whith the circuit current: "))
+    power_factor = calculate_circuit_power_factor(voltage, current)
+    print("The power factor is:", power_factor, 'PF')
+
+elif choice == 6:
+    voltage = float(input("Enter whith the voltage: "))
+    current = float(input("Enter whith the current: "))
+    impedance = calculate_circuit_impedance(voltage, current)
+    print("The impedance is:", impedance, 'Z')
+
+else:
+    print("Exiting the program...")
+    exit()
